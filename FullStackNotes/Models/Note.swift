@@ -7,18 +7,19 @@
 
 import Foundation
 
-struct Note {
+struct Note: Identifiable {
+    
     let title: String
     let body: String
     let category: String
+    private var favorite = false
+    private let id = UUID()
     
     init(title: String, body: String, category: String) {
         self.title = title
         self.body = body
         self.category = category
     }
-    
-    private var favorite = false
     
     mutating func makeFavorite() {
         self.favorite = true
@@ -27,6 +28,8 @@ struct Note {
     mutating func unFavorite() {
         self.favorite = false
     }
+    
+    
 }
 
 // Should we keep the long body with Lorem Ipsum?
