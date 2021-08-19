@@ -13,7 +13,7 @@ struct Note: Identifiable {
     let body: String
     let category: String
     private var favorite = false
-    private let id = UUID()
+    internal let id = UUID()
     
     init(title: String, body: String, category: String) {
         self.title = title
