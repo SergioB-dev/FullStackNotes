@@ -14,6 +14,7 @@
 		941B151E26CDC34B00C775E5 /* FullStackNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941B151D26CDC34B00C775E5 /* FullStackNotesTests.swift */; };
 		941B152826CDC34B00C775E5 /* FullStackNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941B152726CDC34B00C775E5 /* FullStackNotesUITests.swift */; };
 		941B152A26CDC34B00C775E5 /* FullStackNotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941B152926CDC34B00C775E5 /* FullStackNotesUITestsLaunchTests.swift */; };
+		94F6E86426CEB44C00205477 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F6E86326CEB44C00205477 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		941B152326CDC34B00C775E5 /* FullStackNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FullStackNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		941B152726CDC34B00C775E5 /* FullStackNotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStackNotesUITests.swift; sourceTree = "<group>"; };
 		941B152926CDC34B00C775E5 /* FullStackNotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStackNotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		94F6E86326CEB44C00205477 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		941B150B26CDC34900C775E5 /* FullStackNotes */ = {
 			isa = PBXGroup;
 			children = (
+				94F6E86226CEB44000205477 /* Models */,
 				941B150C26CDC34900C775E5 /* FullStackNotesApp.swift */,
 				941B150E26CDC34900C775E5 /* ContentView.swift */,
 				941B151026CDC34B00C775E5 /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				941B152926CDC34B00C775E5 /* FullStackNotesUITestsLaunchTests.swift */,
 			);
 			path = FullStackNotesUITests;
+			sourceTree = "<group>";
+		};
+		94F6E86226CEB44000205477 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				94F6E86326CEB44C00205477 /* Note.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +291,7 @@
 			files = (
 				941B150F26CDC34900C775E5 /* ContentView.swift in Sources */,
 				941B150D26CDC34900C775E5 /* FullStackNotesApp.swift in Sources */,
+				94F6E86426CEB44C00205477 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
