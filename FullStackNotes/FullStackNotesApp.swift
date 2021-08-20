@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct FullStackNotesApp: App {
+    @StateObject private var stateManager = StateManager()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                HomeView()
+            }.environmentObject(stateManager)
         }
     }
 }
