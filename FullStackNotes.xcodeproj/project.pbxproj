@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940025DA26D1D9F5000524B2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940025D926D1D9F5000524B2 /* API.swift */; };
+		940025DC26D1FCA9000524B2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940025DB26D1FCA9000524B2 /* DetailView.swift */; };
 		941B150D26CDC34900C775E5 /* FullStackNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941B150C26CDC34900C775E5 /* FullStackNotesApp.swift */; };
 		941B150F26CDC34900C775E5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941B150E26CDC34900C775E5 /* HomeView.swift */; };
 		941B151126CDC34B00C775E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 941B151026CDC34B00C775E5 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		940025D926D1D9F5000524B2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		940025DB26D1FCA9000524B2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		941B150926CDC34900C775E5 /* FullStackNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FullStackNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		941B150C26CDC34900C775E5 /* FullStackNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStackNotesApp.swift; sourceTree = "<group>"; };
 		941B150E26CDC34900C775E5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 				941B150E26CDC34900C775E5 /* HomeView.swift */,
 				941B151026CDC34B00C775E5 /* Assets.xcassets */,
 				941B151226CDC34B00C775E5 /* Preview Content */,
+				940025DB26D1FCA9000524B2 /* DetailView.swift */,
 			);
 			path = FullStackNotes;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			children = (
 				94F6E86326CEB44C00205477 /* Note.swift */,
 				94F6E86826CF6D4500205477 /* Category.swift */,
+				940025D926D1D9F5000524B2 /* API.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -306,7 +312,9 @@
 				941B150F26CDC34900C775E5 /* HomeView.swift in Sources */,
 				94F6E86926CF6D4500205477 /* Category.swift in Sources */,
 				94F6E86726CF660000205477 /* StateManager.swift in Sources */,
+				940025DC26D1FCA9000524B2 /* DetailView.swift in Sources */,
 				941B150D26CDC34900C775E5 /* FullStackNotesApp.swift in Sources */,
+				940025DA26D1D9F5000524B2 /* API.swift in Sources */,
 				94F6E86426CEB44C00205477 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

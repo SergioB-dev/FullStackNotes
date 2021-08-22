@@ -17,20 +17,48 @@ struct HomeView: View {
                 }
             }.pickerStyle(.segmented)
 
-            List(MockData.notes) { note in
-                Text(note.title)
+            List {
+                ForEach(MockData.notes) { note in
+                    NavigationLink(destination: DetailView(note: note)) {
+                        VStack(alignment: .leading) {
+                                HStack {
+                                    Image(note.language.image)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(height: 30)
+                                        .padding(.bottom, 5)
+                                    Divider()
+                                    Text(note.title)
+                                        .bold()
+                                    Spacer()
+                                    showCodeSnippetIfPresent(note: note)
+                                }
+                                
+                        }
+                    }
+                    
+                    
+                }
+               
+                
+
             }
-            .padding()
-            .listStyle(.plain)
+            .listStyle(.inset)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: { }, label: {
                             Image(systemName: "plus")
                     })
                 }
-            }
+        }
         }
         
+    }
+    @ViewBuilder private func showCodeSnippetIfPresent(note: Note) -> some View {
+        if note.hasCodeSnippets {
+            Image(systemName: "chevron.left.slash.chevron.right")
+                .foregroundColor(.green)
+        }
     }
     
 }
