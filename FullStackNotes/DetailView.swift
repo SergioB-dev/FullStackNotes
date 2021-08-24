@@ -33,8 +33,9 @@ struct DetailView: View {
             HStack {
                 Image(systemName: "arrow.left")
                 ZStack {
-                    Rectangle()
+                    RoundedRectangle(cornerRadius: 20)
                         .fill(.gray)
+                        .opacity(0.3)
                     VStack {
                         Text(note.apiStore[0].codeSnippet?[counter] ?? "")
                     }
