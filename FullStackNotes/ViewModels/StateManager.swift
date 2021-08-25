@@ -10,16 +10,24 @@ import SwiftUI
 final class StateManager: ObservableObject {
     @Published var displayChoice: DisplayChoice = .allNotes
     
-    func beautifyCodeSnippet(code: String) -> String {
-        let colors = [Color.green, .blue, .orange, .red, .pink]
-        var workingString = code.components(separatedBy: ".")
-        var workingList = [NSAttributedString]()
+    func beautifyCodeSnippet(word: String) -> AttributedString {
+        let colors: [Color] = [.indigo, .blue, .pink, .green, .mint]
+        var items = word.components(separatedBy: ".")
+        var aString = AttributedString(word)
         
-        for str in workingString {
-            let randomNumber = Int.random(in: 0...4)
-            workingList.append(NSAttributedString(string: str, attributes: [NSAttributedString.Key.foregroundColor : colors[randomNumber]]))
+        for item in items {
+            let range = aString.range(of: item)!
+            aString[range].foregroundColor = colors[Int.random(in: 0...4)]
+            
+            let bRange = aString.range(of: "{")!
+            let cRange = aString.range(of: "}")!
+            aString[bRange].foregroundColor = .black
+            aString[cRange].foregroundColor = .black
+            
         }
-       // return String(workingList[0])
+        print(aString.runs.count)
+        
+        return aString
     }
 }
 

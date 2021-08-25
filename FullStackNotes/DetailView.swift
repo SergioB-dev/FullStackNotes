@@ -37,7 +37,8 @@ struct DetailView: View {
                         .fill(.gray)
                         .opacity(0.3)
                     VStack {
-                        Text(note.apiStore[0].codeSnippet?[counter] ?? "")
+                        
+                        Text(StateManager().beautifyCodeSnippet(word: note.apiStore[0].codeSnippet?[counter] ?? ""))
                     }
                 }
                 .frame(width: UIScreen.main.bounds.width * 0.7, height: 300)
