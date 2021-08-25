@@ -4,8 +4,8 @@ Notes App. Will be connected to vapor server.
 
 # Features
 
-- [ ] Create list.
+- [x] Create list.
 - [ ] Favorites tab.
-- [ ] Add new notes functionality.
+- [x] Add new notes functionality.
 - [ ] Edit notes.
 - [ ] Delete notes.
