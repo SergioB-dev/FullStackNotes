@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     @State private var counter = 0
+    @ObservedObject var stateManager: StateManager
     let note: Note
     var body: some View {
         VStack {
@@ -22,11 +23,10 @@ struct DetailView: View {
             Text("API's")
             ScrollView(.horizontal) {
                 HStack {
-                    
-                        ForEach(note.apiStore){ apiRef in
-                            Button(action: { }){
+                        ForEach(note.apiStore) { apiRef in
+                            Button(action: { }, label: {
                                 Text(" " + apiRef.name + " | ")
-                            }
+                            })
                         }
                 }
             }
@@ -38,23 +38,23 @@ struct DetailView: View {
                         .opacity(0.3)
                     VStack {
                         
-                        Text(StateManager().beautifyCodeSnippet(word: note.apiStore[0].codeSnippet?[counter] ?? ""))
+                        Text(stateManager
+                                .beautifyCodeSnippet(word: note.apiStore[0].codeSnippet?[counter] ?? "")
+                        )
                     }
                 }
                 .frame(width: UIScreen.main.bounds.width * 0.7, height: 300)
-                Button(action: { self.counter += 1}) {
+                Button(action: { self.counter += 1}, label: {
                     Image(systemName: "arrow.right")
-                }
+                })
             }.padding(.vertical)
             Spacer()
-            
-            
         }
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(note: MockData.notes[1])
+        DetailView(stateManager: StateManager(), note: MockData.notes[1])
     }
 }

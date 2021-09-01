@@ -19,7 +19,7 @@ struct HomeView: View {
 
             List {
                 ForEach(MockData.notes) { note in
-                    NavigationLink(destination: DetailView(note: note)) {
+                    NavigationLink(destination: DetailView(stateManager: stateManager, note: note)) {
                         VStack(alignment: .leading) {
                                 HStack {
                                     Image(note.language.image)
@@ -33,15 +33,9 @@ struct HomeView: View {
                                     Spacer()
                                     showCodeSnippetIfPresent(note: note)
                                 }
-                                
                         }
-                    }
-                    
-                    
+                    }            
                 }
-               
-                
-
             }
             .listStyle(.inset)
             .toolbar {

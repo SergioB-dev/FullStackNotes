@@ -7,14 +7,13 @@
 
 import Foundation
 
-struct API: Identifiable {
+struct CodeExample: Identifiable {
     let id = UUID()
     let name: String
     let type: APIType
     var codeSnippet: [String]?
     var tags: [String]?
 }
-
 
 enum APIType {
     case array

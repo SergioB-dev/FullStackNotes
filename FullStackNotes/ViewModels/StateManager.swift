@@ -12,7 +12,7 @@ final class StateManager: ObservableObject {
     
     func beautifyCodeSnippet(word: String) -> AttributedString {
         let colors: [Color] = [.indigo, .blue, .pink, .green, .mint]
-        var items = word.components(separatedBy: ".")
+        let items = word.components(separatedBy: ".")
         var aString = AttributedString(word)
         
         for item in items {
