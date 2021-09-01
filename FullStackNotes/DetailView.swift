@@ -45,7 +45,8 @@ struct DetailView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(height: 40)
-                })
+                }).navigationBarTitleDisplayMode(.inline)
+                    .navigationTitle(note.language.image.capitalized)
             }.padding(.vertical)
             Spacer()
         }
