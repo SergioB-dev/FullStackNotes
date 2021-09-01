@@ -16,6 +16,8 @@ struct Note: Identifiable {
     var apiStore: [CodeExample]
     let id = UUID()
     
+    private var favorite = false
+    
     var length: String {
         switch body.count {
         case 0...100:
@@ -44,8 +46,6 @@ struct Note: Identifiable {
         }
         return apiStore[0].codeSnippet != nil
     }
-
-    private var favorite = false
     
     init(title: String, altTitle: String? = nil,
          body: String, language: Language,
@@ -64,6 +64,11 @@ struct Note: Identifiable {
     mutating func unFavorite() {
         self.favorite = false
     }
+    
+    func stepThroughCodeSnippets(forward: Bool = true, completion: () -> Void) {
+        guard !apiStore.isEmpty else { return }
+        
+    }
 }
 
 // Should we keep the long body with Lorem Ipsum?
@@ -77,7 +82,7 @@ struct MockData {
                 ftUI knows which view to
                 re-render during state change
                 """,
-             language: .python),
+             language: .python, apiStore: MockData.apis),
         Note(title: "Map Function", body:
                 """
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -114,7 +119,7 @@ struct MockData {
                 Fusce sed lectus commodo, tristique nisi facilisis, sodales est.
                 Sed quam arcu, lobortis vitae elit eu, varius dictum leo.
                 """,
-             language: .haskell),
+             language: .haskell, apiStore: MockData.apis),
         Note(title: "URL Request", body:
                 """
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed
@@ -131,7 +136,7 @@ struct MockData {
                 Mauris a metus lorem. Fusce sed lectus commodo, tristique nisi facilisis,
                 sodales est. Sed quam arcu, lobortis vitae elit eu, varius dictum leo.
                 """,
-             language: .java)
+             language: .java, apiStore: MockData.apis)
     
     ]
     static let apis = [
@@ -148,36 +153,4 @@ struct MockData {
         "myArray.map{$0 * 6}.filter {$0 % 4 == 0}", "myArray.map{$0 * 6}.filter {$0 % 6 == 0}",
         "myArray.map{$0 * 6}.filter {$0 % 3 == 0}", "myArray.map{$0 * 5}.filter {$0 % 3 == 0}"
     ]
-}
-
-enum Language {
-    case swift
-    case python
-    case haskell
-    case csharp
-    case objc
-    case ruby
-    case java
-    case javascript
-    
-    var image: String {
-        switch self {
-        case .swift:
-            return "swift"
-        case .python:
-            return "python"
-        case .haskell:
-            return "haskell"
-        case .csharp:
-            return "c#"
-        case .objc:
-            return "objc"
-        case .ruby:
-            return "ruby"
-        case .java:
-            return "java"
-        case .javascript:
-            return "js"
-        }
-    }
 }

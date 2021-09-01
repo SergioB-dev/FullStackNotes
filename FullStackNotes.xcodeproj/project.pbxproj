@@ -18,6 +18,7 @@
 		941B152A26CDC34B00C775E5 /* FullStackNotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941B152926CDC34B00C775E5 /* FullStackNotesUITestsLaunchTests.swift */; };
 		9432845D26DDAE84006A72F0 /* CustomTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432845C26DDAE84006A72F0 /* CustomTestCase.swift */; };
 		9432845F26DDAEC2006A72F0 /* NoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432845E26DDAEC2006A72F0 /* NoteTests.swift */; };
+		94D57F9B26E0311A00071AC7 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D57F9A26E0311A00071AC7 /* Language.swift */; };
 		94F6E86426CEB44C00205477 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F6E86326CEB44C00205477 /* Note.swift */; };
 		94F6E86726CF660000205477 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F6E86626CF660000205477 /* StateManager.swift */; };
 		94F6E86926CF6D4500205477 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F6E86826CF6D4500205477 /* Category.swift */; };
@@ -55,6 +56,7 @@
 		941B152926CDC34B00C775E5 /* FullStackNotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStackNotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9432845C26DDAE84006A72F0 /* CustomTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTestCase.swift; sourceTree = "<group>"; };
 		9432845E26DDAEC2006A72F0 /* NoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTests.swift; sourceTree = "<group>"; };
+		94D57F9A26E0311A00071AC7 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		94F6E86326CEB44C00205477 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		94F6E86626CF660000205477 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		94F6E86826CF6D4500205477 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				94F6E86326CEB44C00205477 /* Note.swift */,
 				94F6E86826CF6D4500205477 /* Category.swift */,
 				940025D926D1D9F5000524B2 /* CodeExample.swift */,
+				94D57F9A26E0311A00071AC7 /* Language.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				94F6E86726CF660000205477 /* StateManager.swift in Sources */,
 				940025DC26D1FCA9000524B2 /* DetailView.swift in Sources */,
 				941B150D26CDC34900C775E5 /* FullStackNotesApp.swift in Sources */,
+				94D57F9B26E0311A00071AC7 /* Language.swift in Sources */,
 				940025DA26D1D9F5000524B2 /* CodeExample.swift in Sources */,
 				94F6E86426CEB44C00205477 /* Note.swift in Sources */,
 			);
