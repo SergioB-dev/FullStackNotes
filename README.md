@@ -1,3 +1,4 @@
+<img width="410" alt="FullStackNotes - iPhone 12 Pro Max - 3" src="https://user-images.githubusercontent.com/63927113/132594417-390fae6b-4bf8-418e-8dce-4c0ccfe182d3.png">
 
 # FullStackNotes
 
