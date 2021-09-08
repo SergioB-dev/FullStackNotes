@@ -6,37 +6,41 @@
 //
 
 import XCTest
+@testable import FullStackNotes
 
 class FullStackNotesUITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+    
         continueAfterFailure = false
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        XCUIApplication().launch()
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testBaseNotes() {
+        
+        XCTAssertTrue(XCUIApplication().staticTexts["List Comprehension"].exists)
+        XCTAssertTrue(XCUIApplication().staticTexts["Map Function"].exists)
+        XCTAssertTrue(XCUIApplication().staticTexts["Custom Filter"].exists)
+        XCTAssertTrue(XCUIApplication().staticTexts["URL Request"].exists)
     }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
+        
+    func testAPITraversal() {
+        XCUIApplication().staticTexts["List Comprehension"].tap()
+        
+         [
+            "myArray.map{$0 * 6}.filter {$0 % 3 == 0}", "myArray.map{$0 * 6}.filter {$0 % 2 == 0}",
+            "myArray.map{$0 * 6}.filter {$0 % 4 == 0}", "myArray.map{$0 * 6}.filter {$0 % 6 == 0}",
+            "myArray.map{$0 * 6}.filter {$0 % 3 == 0}", "myArray.map{$0 * 5}.filter {$0 % 3 == 0}",
+            "this == that"
+        ].forEach { snippet in
+            XCTAssertTrue(XCUIApplication().staticTexts[snippet].exists)
+            XCUIApplication().staticTexts["Triangle Arrow Right"].tap()
         }
+ 
     }
 }

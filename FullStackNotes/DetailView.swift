@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     @State private var counter = 0
-    @ObservedObject var stateManager: StateManager
+    @EnvironmentObject var stateManager: StateManager
     let note: Note
     var body: some View {
         VStack {
@@ -17,40 +17,42 @@ struct DetailView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(height: 300)
-                .padding(.bottom)
+            Group {
+                HStack {
+                    Text("Similarities").bold()
+                    Text("**to:**")
+                        .foregroundColor(.indigo)
+                }
+                .font(.title2)
+                .padding(.top)
             Rectangle()
-                .frame(width: UIScreen.main.bounds.width * 0.8, height: 2)
-            Text("API's")
-                .fontWeight(.bold)
-            
-            HStack {
-                Button(action: {move(forward: false) }, label: {
-                    Image(systemName: "arrowtriangle.left.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 40)
-                })
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(.gray)
-                        .opacity(0.3)
-                    VStack {
-                        Text(stateManager
-                                .beautifyCodeSnippet(word: note.apiStore[0].codeSnippet?[counter] ?? ""))
+                .frame(width: 150, height: 2)
+                
+                LazyVGrid(columns: gridStyle) {
+                    ForEach(Language.allCases) { language in
+                        if language != note.language {
+                            NavigationLink(destination:
+                                            SimilarityView(compareeNoteImage: note.language.image,
+                                                           comparerNoteImage: language.image)) {
+                            Image(language.image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 80)
+                                .padding()
+                            }
+                        }
                     }
                 }
-                .frame(width: UIScreen.main.bounds.width * 0.7, height: 100)
-                Button(action: { move(forward: true)}, label: {
-                    Image(systemName: "arrowtriangle.right.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 40)
-                }).navigationBarTitleDisplayMode(.inline)
-                    .navigationTitle(note.language.image.capitalized)
-            }.padding(.vertical)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
+            .padding(.horizontal)
             Spacer()
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle(note.language.image.capitalized)
         }
     }
+    private let gridStyle = [GridItem(), GridItem(), GridItem()]
     
     private func move(forward: Bool) {
         if forward {
@@ -66,7 +68,8 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            DetailView(stateManager: StateManager(), note: MockData.notes[1])
+            DetailView(note: MockData.notes[1])
+                .environmentObject(StateManager())
         }
     }
 }

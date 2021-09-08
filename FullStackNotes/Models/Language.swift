@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Language {
+enum Language: CaseIterable, Identifiable {
     case swift
     case python
     case haskell
@@ -36,5 +36,9 @@ enum Language {
         case .javascript:
             return "js"
         }
+    }
+    
+    var id: String {
+        self.image
     }
 }

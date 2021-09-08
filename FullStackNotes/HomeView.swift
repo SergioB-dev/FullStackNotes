@@ -19,7 +19,8 @@ struct HomeView: View {
 
             List {
                 ForEach(MockData.notes) { note in
-                    NavigationLink(destination: DetailView(stateManager: stateManager, note: note)) {
+                    NavigationLink(destination: DetailView(
+                        note: note)) {
                         VStack(alignment: .leading) {
                                 HStack {
                                     Image(note.language.image)
